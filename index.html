@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E. Barnes Author</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">  
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+    :root {
+      /* Measurements */
+      --measure: 75ch;
+      --max-width: 88rem;
+      --space-s: 0.5rem;
+      --space-m: 1rem;
+      --space-l: 1.5rem;
+      --space: var(--space-m);
+      --icon-space: 0.4em;
+      --padding-xs: 1.5rem;
+      --padding-s: 2.5rem;
+      --padding-m: 4rem;
+      --padding-l: 6rem;
+      --padding: var(--padding-s);
+      --padding-clamp-m: clamp(var(--padding-s), 0.8146rem + 3.3708vw, var(--padding-m));
+      --padding-clamp-l: clamp(var(--padding-m), 1.7528rem + 4.4944vw, var(--padding-l));
+      --section-padding-block-s: var(--padding-s);
+      --section-padding-block-m: var(--padding-clamp-m);
+      --section-padding-block: var(--padding-clamp-l);
+      --section-padding-inline: clamp(var(--gutter), calc(50vw - calc(var(--max-width) / 2)), calc(50vw - calc(var(--max-width) / 2)));
+      --gutter: 1.5rem;
+    }
+
+    * {
+      max-inline-size: var(--measure);
+    }
+
+    html,
+    body,
+    div,
+    header,
+    nav,
+    main,
+    footer {
+      max-inline-size: none;
+    }
+
+    html {
+      background-color: #2e3550;
+      color: #e9e9e9;
+    }
+
+    img {
+      max-inline-size: 100%;
+    }
+
+    .center {
+      box-sizing: content-box;
+      max-inline-size: var(--measure);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .stack {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stack > * {
+      margin-block: 0;
+    }
+
+    .stack > * + * {
+      margin-block-start: var(--space);
+    }
+
+    .stack-s > * + * {
+      margin-block-start: var(--space-s);
+    }
+
+    .stack-l > * + * {
+      margin-block-start: var(--space-l);
+    }
+
+    .section {
+      position: relative;
+      padding-block: var(--section-padding-block);
+      padding-inline: var(--section-padding-inline);
+      max-inline-size: none;
+    }
+
+    .section-s {
+      padding-block: var(--section-padding-block-s);
+    }
+
+    .section-m {
+      padding-block: var(--section-padding-block-m);
+    }
+
+    .content {
+      background-color: #e9e9e9;
+      color: #222222;
+    }
+
+    .header h1 {
+      font-size: 30px;
+      font-family: 'Pacifico', cursive;
+    }
+
+    .footer {
+      padding: 55px 20px;
+      background-color: #2e3550;
+      color: white;
+      text-align: center;
+    }
+
+    .footer ul {
+      display: flex;
+      gap: 0.75rem;
+      list-style-type: none;
+      padding-inline-start: 0;
+      max-inline-size: unset;
+    }
+
+    .footer li {
+      flex-shrink: 0;
+    }
+
+    .footer li a {
+      text-decoration: none;
+    }
+
+    .footer li a,
+    .footer li a:visited,
+    .footer li a:hover {
+      color: white;
+    }
+</style>
+</head>
+
+<body>
+  <header class="header section section-s center stack">
+    <h1>Em Barnes Writes</h1>
+
+  </header>
+  <main class="content section center stack">
+    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+    <p>Nulla sed enim vitae lorem mattis aliquet. Cras vehicula ipsum velit, commodo vehicula tellus imperdiet id.</p>
+    <h2>Vivamus ullamcorper mi in libero mattis feugiat</h2>
+    <p>Mauris vulputate nisl in lacus fermentum tempor quis vel nibh. Suspendisse dui nulla, lacinia ac ullamcorper sit amet, semper a erat.</p>
+  </main>
+  <footer class="footer section section-s center stack stack-l">
+    <span itemscope itemtype="https://schema.org/Person">
+      <link itemprop="url" href="#">
+      <ul>
+        <li>
+          <a role="link" itemprop="sameAs" href="mailto:a#" rel="noreferrer" aria-label="Email #" title="Email #">
+            <i class="fab fa-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a role="link" itemprop="sameAs" href="# on Instagram" title="# on Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a role="link" itemprop="sameAs" href="# on TikTok" title="# on TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </li>
+      </ul>
+    </span>
+    <p>&copy; 2023 Copyright E. Barnes</p>
+  </footer>
+</body>
+
+</html>
