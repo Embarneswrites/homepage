@@ -5,11 +5,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>E. Barnes Author</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">  
-  
+
+  <meta property="og:title" content="E.M. Barnes Books | Mae: Discovered">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://embarnesbooks.com">
+  <meta property="og:image" content="/m-d-open-graph.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="">
+  <meta property="og:description" content="{description}">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
     :root {
       /* Measurements */
@@ -36,6 +50,7 @@
 
     * {
       max-inline-size: var(--measure);
+      font-family: 'Open Sans', sans-serif;
     }
 
     html,
@@ -55,6 +70,16 @@
 
     img {
       max-inline-size: 100%;
+    }
+
+    h1 {
+      font-size: clamp(1.5rem, 0.8387rem + 2.5559vw, 2.5rem);
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: clamp(1.25rem, 0.9193rem + 1.278vw, 1.75rem);
+      font-weight: 600;
     }
 
     .center {
@@ -108,11 +133,6 @@
       color: #222222;
     }
 
-    .header h1 {
-      font-size: 30px;
-      font-family: 'Pacifico', cursive;
-    }
-
     .footer {
       padding: 55px 20px;
       background-color: #2e3550;
@@ -122,7 +142,7 @@
 
     .footer ul {
       display: flex;
-      gap: 0.75rem;
+      gap: var(--space-l);
       list-style-type: none;
       padding-inline-start: 0;
       max-inline-size: unset;
@@ -146,7 +166,7 @@
 
 <body>
   <header class="header section section-s center stack">
-    <h1>Em Barnes Writes</h1>
+    <h1>E.M. Barnes Books</h1>
 
   </header>
   <main class="content section center stack">
@@ -161,22 +181,22 @@
       <ul>
         <li>
           <a role="link" itemprop="sameAs" href="mailto:a#" rel="noreferrer" aria-label="Email #" title="Email #">
-            <i class="fab fa-facebook"></i>
+            <i class="fa fa-envelope fa-2x"></i>
           </a>
         </li>
         <li>
           <a role="link" itemprop="sameAs" href="# on Instagram" title="# on Instagram">
-            <i class="fab fa-instagram"></i>
+            <i class="fab fa-instagram fa-2x"></i>
           </a>
         </li>
         <li>
           <a role="link" itemprop="sameAs" href="# on TikTok" title="# on TikTok">
-            <i class="fab fa-tiktok"></i>
+            <i class="fab fa-tiktok fa-2x"></i>
           </a>
         </li>
       </ul>
     </span>
-    <p>&copy; 2023 Copyright E. Barnes</p>
+    <p>&copy; 2023 Copyright E.M. Barnes</p>
   </footer>
 </body>
 
