@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
 
@@ -41,11 +41,11 @@
       --padding: var(--padding-s);
       --padding-clamp-m: clamp(var(--padding-s), 0.8146rem + 3.3708vw, var(--padding-m));
       --padding-clamp-l: clamp(var(--padding-m), 1.7528rem + 4.4944vw, var(--padding-l));
-      --section-padding-block-s: var(--padding-s);
+      --section-padding-block-s: var(--space);
       --section-padding-block-m: var(--padding-clamp-m);
       --section-padding-block: var(--padding-clamp-l);
-      --section-padding-inline: clamp(var(--gutter), calc(50vw - calc(var(--max-width) / 2)), calc(50vw - calc(var(--max-width) / 2)));
-      --gutter: 1.5rem;
+      --section-padding-inline: clamp(var(--space), calc(50vw - calc(var(--max-width) / 2)), calc(50vw - calc(var(--max-width) / 2)));
+      --color-text: #0a2426;
     }
 
     * {
@@ -64,22 +64,44 @@
     }
 
     html {
-      background-color: #2e3550;
-      color: #e9e9e9;
+      background-color: #f1d763;
+      color: var(--color-text);
     }
 
     img {
       max-inline-size: 100%;
+      /* transform: rotate(-2deg); */
+    }
+
+    a,
+    a:visited,
+    a:hover {
+      color: var(--color-text);
     }
 
     h1 {
-      font-size: clamp(1.5rem, 0.8387rem + 2.5559vw, 2.5rem);
-      font-weight: 600;
+      font-size: var(--font-s);
+      font-weight: 700;
     }
 
     h2 {
       font-size: clamp(1.25rem, 0.9193rem + 1.278vw, 1.75rem);
-      font-weight: 600;
+      font-weight: 700;
+    }
+
+    .section {
+      position: relative;
+      padding-block: var(--section-padding-block);
+      padding-inline: var(--section-padding-inline);
+      max-inline-size: none;
+    }
+
+    .section-s {
+      padding-block: var(--section-padding-block-s);
+    }
+
+    .section-m {
+      padding-block: var(--section-padding-block-m);
     }
 
     .center {
@@ -90,6 +112,18 @@
       align-items: center;
       margin-inline: auto;
       text-align: center;
+    }
+
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: var(--space-l);
+    }
+
+    .column {
+      inline-size: clamp(200px, calc(33.3333% - var(--space)), 50%);
+      flex-grow: 1;
     }
 
     .stack {
@@ -113,34 +147,18 @@
       margin-block-start: var(--space-l);
     }
 
-    .section {
-      position: relative;
-      padding-block: var(--section-padding-block);
-      padding-inline: var(--section-padding-inline);
-      max-inline-size: none;
-    }
-
-    .section-s {
-      padding-block: var(--section-padding-block-s);
-    }
-
-    .section-m {
-      padding-block: var(--section-padding-block-m);
-    }
-
-    .content {
-      background-color: #e9e9e9;
-      color: #222222;
+    .header {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space);
     }
 
     .footer {
       padding: 55px 20px;
-      background-color: #2e3550;
-      color: white;
       text-align: center;
     }
 
-    .footer ul {
+    .social ul {
       display: flex;
       gap: var(--space-l);
       list-style-type: none;
@@ -148,35 +166,46 @@
       max-inline-size: unset;
     }
 
-    .footer li {
+    .social li {
       flex-shrink: 0;
     }
 
-    .footer li a {
+    .social li a {
       text-decoration: none;
     }
 
-    .footer li a,
-    .footer li a:visited,
-    .footer li a:hover {
-      color: white;
+    .button {
+      inline-size: fit-content;
+      padding: var(--space-s) var(--space);
+      border: 0.125rem solid var(--color-text);
+      border-radius: 1rem;
+      background-color: azure;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 700;
     }
+
+    .button:disabled,
+    .button[disabled]{
+      border-color: #999999;
+      background-color: #cccccc;
+      color: #666666;
+      pointer-events: auto;
+      cursor: not-allowed;
+    }
+
+    .large {
+      font-size: clamp(1.25rem, 0.9193rem + 1.278vw, 1.75rem);
+    }
+
 </style>
 </head>
 
 <body>
-  <header class="header section section-s center stack">
-    <h1>E.M. Barnes Books</h1>
+  <header class="header section section-s">
+    <h1>E.M. Barnes<br>Books</h1>
 
-  </header>
-  <main class="content section center stack">
-    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
-    <p>Nulla sed enim vitae lorem mattis aliquet. Cras vehicula ipsum velit, commodo vehicula tellus imperdiet id.</p>
-    <h2>Vivamus ullamcorper mi in libero mattis feugiat</h2>
-    <p>Mauris vulputate nisl in lacus fermentum tempor quis vel nibh. Suspendisse dui nulla, lacinia ac ullamcorper sit amet, semper a erat.</p>
-  </main>
-  <footer class="footer section section-s center stack stack-l">
-    <span itemscope itemtype="https://schema.org/Person">
+    <span class="social" itemscope itemtype="https://schema.org/Person">
       <link itemprop="url" href="#">
       <ul>
         <li>
@@ -196,6 +225,24 @@
         </li>
       </ul>
     </span>
+
+  </header>
+  <main class="section section-m stack">
+    <div class="columns">
+
+      <div class="column stack">
+        <img src="mae-discovered-cover.png">
+      </div>
+
+      <div class="column stack center">
+        <p class="large">The fate of the world rests on her narrow shoulders.</p>
+        <p>Coming soon</p>
+        <a class="button" href="#" disabled>Pre-order</a>
+      </div>
+
+    </div>
+  </main>
+  <footer class="footer section section-s center stack stack-l">
     <small>&copy; 2023 Copyright E.M. Barnes</small>
   </footer>
 </body>
