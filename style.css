@@ -31,6 +31,16 @@ html {
   font-family: 'Open Sans', sans-serif;
 }
 
+@media (prefers-color-scheme: dark) {
+
+  :root {
+    --color-background: #0a2426;
+    --color-text: #fefefe;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
 body {
   margin: 0;
 }
