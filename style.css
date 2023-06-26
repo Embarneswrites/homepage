@@ -184,3 +184,8 @@ h2 {
 .large {
   font-size: clamp(1.25rem, 0.9193rem + 1.278vw, 1.75rem);
 }
+
+.uppercase {
+  text-transform: uppercase;
+  font-weight: 700;
+}
