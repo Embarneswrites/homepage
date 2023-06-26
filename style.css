@@ -31,6 +31,10 @@ html {
   font-family: 'Open Sans', sans-serif;
 }
 
+body {
+  margin: 0;
+}
+
 .center {
   box-sizing: content-box;
   max-inline-size: var(--measure);
@@ -79,7 +83,7 @@ h2 {
 }
 
 .section-s {
-  padding-block: var(--section-padding-block-s);
+  padding-block: var(--space);
 }
 
 .section-m {
@@ -87,10 +91,17 @@ h2 {
 }
 
 .columns {
+  --grid-layout-gap: var(--space-l);
+  --grid-column-count: 2;
+  --grid-item--min-width: 12.5rem;
+  --gap-count: calc(var(--grid-column-count) - 1);
+  --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+  --grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
+
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 50%));
-  gap: var(--space-l);
-  align-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
+  grid-gap: var(--grid-layout-gap);
+  align-items: center;
 }
 
 .stack {
@@ -118,13 +129,14 @@ h2 {
   display: flex;
   justify-content: space-between;
   gap: var(--space);
-  align-content: center;
+  align-items: center;
 }
 
 .social ul {
   display: flex;
   gap: var(--space-l);
   list-style-type: none;
+  margin-block: 0;
   padding-inline-start: 0;
   max-inline-size: unset;
 }
