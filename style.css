@@ -67,7 +67,9 @@ footer {
 }
 
 img {
-  max-inline-size: 100%;
+  inline-size: 100%;
+  max-inline-size: 30rem;
+  justify-self: end;
 }
 
 a,
