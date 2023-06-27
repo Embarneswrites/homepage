@@ -1,6 +1,7 @@
 :root {
   --measure: 75ch;
   --max-width: 88rem;
+  --content-width: 60rem;
   --space-s: 0.5rem;
   --space-m: 1rem;
   --space-l: 1.5rem;
@@ -17,8 +18,13 @@
   --section-padding-block-m: var(--padding-clamp-m);
   --section-padding-block: var(--padding-clamp-l);
   --section-padding-inline: clamp(var(--space), calc(50vw - calc(var(--max-width) / 2)), calc(50vw - calc(var(--max-width) / 2)));
-  --color-background: #f1d763;
+  --section-narrow-padding-inline: clamp(var(--space), calc(50vw - calc(var(--content-width) / 2)), calc(50vw - calc(var(--content-width) / 2)));
+  --color-background: #fefefe;
   --color-text: #0a2426;
+  --text-xs: 0.8125rem;
+  --text-s: 1rem;
+  --text-m: 1.25rem;
+  --text-l: 1.75rem;
 }
 
 * {
@@ -67,9 +73,8 @@ footer {
 }
 
 img {
-  inline-size: 100%;
-  max-inline-size: 30rem;
-  justify-self: end;
+  inline-size: min(100%, 20rem);
+  filter: drop-shadow(10px 10px 24px #404040);
 }
 
 a,
@@ -78,13 +83,22 @@ a:hover {
   color: var(--color-text);
 }
 
+p {
+  font-size: clamp(var(--text-s), 0.8347rem + 0.639vw, var(--text-m));
+}
+
+small {
+  font-size: clamp(var(--text-xs), 0.6885rem + 0.4792vw, var(--text-s));
+}
+
 h1 {
-  font-size: var(--font-s);
+  font-size: clamp(2rem, 1.3387rem + 2.5559vw, 3rem);
   font-weight: 700;
 }
 
 h2 {
-  font-size: clamp(1.25rem, 0.9193rem + 1.278vw, 1.75rem);
+  font-size: clamp(var(--text-m), 0.9193rem + 1.278vw, var(--text-l));
+  text-transform: uppercase;
   font-weight: 700;
 }
 
@@ -92,6 +106,10 @@ h2 {
   position: relative;
   padding-block: var(--section-padding-block);
   padding-inline: var(--section-padding-inline);
+}
+
+.section-narrow {
+  padding-inline: var(--section-narrow-padding-inline);
 }
 
 .section-s {
@@ -112,7 +130,7 @@ h2 {
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
-  grid-gap: var(--grid-layout-gap);
+  grid-gap: 2.5rem var(--grid-layout-gap);
   align-items: center;
 }
 
@@ -179,8 +197,4 @@ h2 {
   color: #666666;
   pointer-events: auto;
   cursor: not-allowed;
-}
-
-.large {
-  font-size: clamp(1.25rem, 0.9193rem + 1.278vw, 1.75rem);
 }
