@@ -92,11 +92,18 @@ small {
 }
 
 h1 {
-  font-size: clamp(2rem, 1.3387rem + 2.5559vw, 3rem);
+  margin-block: 0;
+  font-size: clamp(var(--text-m), 0.9193rem + 1.278vw, var(--text-l));
+  text-transform: uppercase;
   font-weight: 700;
 }
 
 h2 {
+  font-size: clamp(2rem, 1.3387rem + 2.5559vw, 3rem);
+  font-weight: 700;
+}
+
+.large {
   font-size: clamp(var(--text-m), 0.9193rem + 1.278vw, var(--text-l));
   text-transform: uppercase;
   font-weight: 700;
@@ -164,7 +171,7 @@ h2 {
 
 .social ul {
   display: flex;
-  gap: var(--space-l);
+  gap: var(--space);
   list-style-type: none;
   margin-block: 0;
   padding-inline-start: 0;
@@ -177,6 +184,17 @@ h2 {
 
 .social li a {
   text-decoration: none;
+}
+
+.title {
+  display: flex;
+  gap: var(--space);
+  align-items: center;
+}
+
+.title img {
+  block-size: 3rem;
+  inline-size: 3rem;
 }
 
 .button {
