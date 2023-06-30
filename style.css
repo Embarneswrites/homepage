@@ -101,6 +101,7 @@ h1 {
 
 h2 {
   font-size: clamp(2rem, 1.3387rem + 2.5559vw, 3rem);
+  line-height: 1.25;
   font-weight: 700;
 }
 
