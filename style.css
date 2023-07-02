@@ -81,7 +81,7 @@ img {
 a,
 a:visited,
 a:hover {
-  color: var(--color-text);
+  color: currentColor;
 }
 
 p {
@@ -201,13 +201,19 @@ h2 {
 
 .button {
   inline-size: fit-content;
-  padding: var(--space-s) var(--space);
   border: 0.125rem solid var(--color-text);
   border-radius: 1rem;
-  background-color: azure;
+  padding: var(--space-s) var(--space);
+  background-color: var(--color-text);
+  color: var(--color-background);
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+.button:hover,
+.button:visited {
+  color: var(--color-background);
 }
 
 .button:disabled,
