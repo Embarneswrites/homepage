@@ -78,9 +78,7 @@ img {
   filter: drop-shadow(10px 10px 24px #404040);
 }
 
-a,
-a:visited,
-a:hover {
+a {
   color: currentColor;
 }
 
@@ -209,11 +207,6 @@ h2 {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
-}
-
-.button:hover,
-.button:visited {
-  color: var(--color-background);
 }
 
 .button:disabled,
